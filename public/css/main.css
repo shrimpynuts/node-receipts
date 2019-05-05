@@ -8,3 +8,7 @@ body {
 #headshot {
     width: 500px;
 }
+
+#body-container {
+  padding-top: 50px
+}

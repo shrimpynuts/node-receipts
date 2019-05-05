@@ -10,13 +10,17 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Joma's Starter Template for NodeJs Web App</title>
+    <title>Receipt WebApp</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/main.css" rel="stylesheet">
+
+    <!-- Dropzone styling -->
+    <link rel="stylesheet" href="css/dropzone.css">
+
 
   </head>
 
@@ -34,23 +38,23 @@
           <a class="navbar-brand" href="#">Project name</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
+          <!-- <ul class="nav navbar-nav">
             <li class="active"><a href="#wan">Button1</a></li>
             <li><a href="#too">Button2</a></li>
             <li><a href="#phree">Button3</a></li>
-          </ul>
+          </ul> -->
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
-    <div class="container">
+    <div class="container" id="body-container">
 
-      <div class="starter-template">
-        <h1>Joma is a Douche</h1>
-        <img id="headshot" src="headshot.jpg" alt="Mountain View">
-        <p class="lead">He will never get a girlfriend.<br> Not with that face.</p>
-      </div>
-
+      <form action="/file-upload" class="dropzone">
+        <div class="fallback">
+          <input name="file" type="file" multiple />
+        </div>
+      </form>
+      
     </div><!-- /.container -->
 
 
@@ -60,5 +64,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/dropzone.js"></script>
   </body>
 </html>

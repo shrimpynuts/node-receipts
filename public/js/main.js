@@ -1,12 +1,3 @@
-// console.log("we out here!")
-
-// const selectedFile = document.getElementById('input').files[0];
-// console.log(selectedFile)
-
-// function handleFiles(files) {
-//     console.log("handling files")
-//     console.log(files)
-// }
 
 // // Dropzone object
 var dropzone = new Dropzone('#demo-upload', {
@@ -38,6 +29,7 @@ var minSteps = 6,
     timeBetweenSteps = 100,
     bytesPerStep = 100000;
 
+// Function on upload of file
 dropzone.uploadFiles = function(files) {
     var self = this;
     // console.log(files[0].getAsDataURL())
@@ -45,12 +37,21 @@ dropzone.uploadFiles = function(files) {
     reader.readAsDataURL(files[0])
     // console.log(files[0].result)
     reader.onload = function () {
-        console.log(reader.result);
         var str = reader.result
         // var src = str.slice(str.lastIndexOf('/') + str.length)
         // console.log(src)
         $(".img").attr("src", str)
-        $(".res-para").text("this is the result of the ocr")
+
+        Tesseract.recognize(files[0])
+            .then(function(result){
+                console.log(result)
+                result.paragraphs.map((paragraph) => {
+                    paragraph.lines.map((line) => {
+                        $(".res-para").append("<p>".concat(line.text, "</p>"))
+                    })
+                })
+
+            })
 
       };
       reader.onerror = function (error) {
@@ -87,3 +88,4 @@ dropzone.uploadFiles = function(files) {
         }
     }
 }
+

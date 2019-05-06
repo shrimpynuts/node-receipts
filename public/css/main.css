@@ -10,5 +10,34 @@ body {
 }
 
 #body-container {
-  padding-top: 50px
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background: white;
+  border-radius: 5px;
+  border-image: none;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#res-container {
+  /* background-color:green; */
+  margin: auto;
+  width:700px;
+  display: flex;
+  flex-basis: auto;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.img {
+  /* align-self: "center"; */
+  width: 300px;
+  height: 400px;
+}
+
+.res-para {
+  /* align-self: "center"; */
+  width: 300px;
+  height: 400px;
 }
